@@ -44,12 +44,11 @@ public class KafkaClient {
                 for (ConsumerRecord record :
                         records) {
                     System.out.println("Consumer record: " + record.value());
-
+                    consumer.commitAsync();
                 }
 
-
             }
-            consumer.commitAsync();
+
         } finally {
             producer.close();
             consumer.close();
