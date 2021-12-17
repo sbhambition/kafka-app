@@ -50,6 +50,7 @@ public class KafkaClient {
             }
 
         } finally {
+            //closing producer
             producer.close();
             consumer.close();
         }
